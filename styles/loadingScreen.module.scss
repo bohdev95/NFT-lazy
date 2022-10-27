@@ -1,0 +1,60 @@
+.loading_screen_wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-color: #354153;
+  position: fixed;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+ .loading_screen_content {
+  // border: 1px solid red;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  
+  // background: radial-gradient(circle, rgba(66,255,0,0.3) 0%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 100%);
+  // animation-name: blink;
+  
+  .loading_gradient {
+    top: 0;
+    bottom: 0;
+    left: auto;
+    right: auto;
+    position: absolute;
+    // background: radial-gradient(circle, rgba(66,255,0,0.3) 0%, rgba(0,0,0,0) 32%, rgba(0,0,0,0) 100%);
+    background: radial-gradient(circle, rgba(66,255,0,0.22) 0%, rgba(30,115,0,0) 50%, rgba(255,255,255,0) 100%);
+    animation-name: blink;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    width: 1000px;
+  }
+  img {
+    width: 100%;
+    max-width: 295px;
+  }
+  .percent {
+    color: #00FB1D;
+    font-size: 46px;
+    font-weight: 700;
+    
+  }
+}
+}
+@keyframes blink {
+  0% {
+    opacity: 1;
+
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}

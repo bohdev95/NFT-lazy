@@ -1,0 +1,56 @@
+.language_btn {
+  margin-left: auto;
+  display: flex;
+  position: relative;
+  button {
+    transition: all linear 0.6s;
+
+    background-color: #ffffff;
+    span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: auto!important;
+    }
+  }
+  .language_selector_wrapper {
+    position: absolute;
+    background-color: #ffffff;
+    padding: 0;
+    padding-left: 2rem;
+    padding-right: 5rem;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    top: calc(100% + 10px);
+    right: 36%;
+    border-radius: 12px;
+    transition: all linear 0.3s;
+    button {
+      width: auto;
+      height: auto;
+      padding: 1rem 0;
+      border-radius: 0;
+      // padding: 0;
+      margin: 0;
+      
+      font-size: 22px;
+      font-weight: 600;
+    }
+  }
+}
+
+.l_active {
+  opacity: 1;
+  visibility: visible;
+}
+.l_hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.col_purple {
+  color: #867BFF!important;
+}
+.col_black {
+  color: #000!important;
+}

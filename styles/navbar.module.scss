@@ -4,9 +4,9 @@
   height: 100%;
   background-color: rgba(0,0,0,0.7);
   transition: all linear 0.3s;
+  z-index: 999;
 }
 .navbar {
-  // border: 2px solid red;
   position: absolute;
   left: 0;
   right: 0;
@@ -16,9 +16,33 @@
   justify-content: center;
   z-index: 999;
   transition: all linear 0.2s;
+  overflow: hidden;
+  height: 100%;
   img {
-    width: 100%;
+    position: absolute;
+    top: -150px;
     max-width: 1145px;
+    @media screen and (max-width: 768px) {
+      max-width: none;
+      max-height: none;
+      width: 1145px;
+      
+      left: 50%;
+      transform: translateX(-50%);
+      top: -250px;
+    }
+    @media screen and (max-width: 768px) {
+      width: 300px;
+      top: -36px;
+    }
+    @media screen and (max-width: 480px) {
+      width: 200px;
+      top: -25px;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    height: 100%;
   }
 }
 
@@ -30,6 +54,12 @@
   margin-right: auto;
   bottom: 80%;
   width: 130px!important;
+  @media screen and (max-width: 768px) {
+    width: 40px!important;
+    top: -20px!important;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 .modal_hidden {
@@ -39,22 +69,30 @@
 
 .modal_showed {
   opacity: 1;
-  visibility: visible;
 }
 .nav_hidden {
   top: -200%;
 }
 .nav_showed {
-  top: -12%;
+  top: 0;
+  animation-name: bounce;
+  animation-duration: .7s;
+  @media screen and (min-width: 1200px) {
+    top: 0;
+  }
+  @media screen and (max-width: 768px) {
+    top: 0;
+  }
 }
 
 .nav_handler_container {
   display: flex;
   width: 100%;
-  position: absolute;
+  position: fixed;
+  z-index: 998;
   button {
-    z-index: 9999;
-    margin-left: auto;
+    z-index: 998;
+    // margin-left: auto;
     margin-top: 2rem;
     margin-right: 2rem;
     width: 54px;
@@ -88,11 +126,19 @@
   justify-content: center;
   height: 48px;
   position: absolute;
-  bottom: 47%;
+  top: 320px;
   left: 50%;
   transform: translateX(-50%);
+  @media screen and (max-width: 820px) {
+    top: 28%;
+  }
   @media screen and (max-width: 768px) {
+    top: 45%;
     flex-direction: column;
+  }
+  @media screen and (max-width: 480px) {
+    top: auto;
+    bottom: auto;
   }
   button {
     cursor: pointer;
@@ -109,5 +155,35 @@
     font-size: 24px;
     color: #29243F;
     background-color: #ffffff;
+    @media screen and (max-width: 768px) {
+      margin: 10px 0;
+    }
+    @media screen and (max-width: 480px) {
+      font-size: 18px;
+    }
+    @media screen and (max-height: 670px) {
+      font-size: 16px;
+      margin: 8px 0;
+    }
+  }
+}
+
+@keyframes bounce {
+  0%, 30%, 40%, 50% {
+    transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+  0% {
+    top: -200%;
+  }
+  30% {
+    top: -2%;
+  }
+  40% {
+    @media screen and (max-width: 768px) {
+      top: -12%;
+    }
+  }
+  50% {
+    top: -12%;
   }
 }

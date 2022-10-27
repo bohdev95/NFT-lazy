@@ -1,0 +1,29 @@
+.welcome {
+  border: 1px solid red;
+  .welcome_text {
+    margin-left: 10rem;
+    h1 {
+      font-size: 150px;
+      font-weight: 900;
+      text-transform: uppercase;
+      color: #ffffff;
+      margin: 0 0 5rem 0;
+    }
+    p {
+      color: #ffffff;
+      font-size: 40px;
+      font-weight: 300;
+      line-height: 53px;
+      margin: 0;
+      max-width: 525px;
+      margin-left: 14px;
+    }
+  }
+  .welcome_images {
+    margin-right: 10rem;
+    .lazyr {
+      height: 652px;
+      width: 521px;
+    }
+  }
+}

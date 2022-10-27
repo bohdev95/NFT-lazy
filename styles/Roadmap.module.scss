@@ -1,0 +1,481 @@
+$circle-size: 600px;
+$circle-small-size: 240px;
+.roadmar_container {
+  // position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100vw;
+  background: #354153;
+
+  overflow: hidden;
+
+  .roadmar_title {
+    font-size: 150px;
+    font-weight: 900;
+    color: #fff;
+    text-transform: uppercase;
+    font-style: normal;
+    z-index: 31;
+    opacity: 1;
+    animation: minimize-text 1s forwards;
+    animation-delay: 1s;
+  }
+}
+
+.roadmar_gradient {
+  position: absolute;
+  z-index: 30;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(0.16deg, #02FA23 0.18%, #43DFB2 42.7%, #9E73F9 64.55%);
+  animation: minimize 1s forwards;
+  animation-delay: 1s;
+}
+
+.roadmar_gradient2 {
+  position: absolute;
+  z-index: 30;
+  height: 1px;
+  width: 1px;
+  opacity: 0;
+  background: linear-gradient(0.16deg, #02FA23 0.18%, #43DFB2 42.7%, #9E73F9 64.55%);
+  animation: minimize2 1s forwards;
+  animation-delay: 37s;
+}
+
+@keyframes minimize {
+  0% {
+  height: 100%;
+  width: 100%;
+  }
+  90% {
+    opacity: 1;
+  }
+  99% {
+    height: $circle-small-size;
+    width: $circle-small-size;
+    border-radius: 50%;
+    // z-index: 44;
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes minimize2 {
+  0% {
+    opacity: 0;
+  }
+  // 90% {
+  //   opacity: 0;
+  // }
+  40% {
+    height: $circle-small-size;
+    width: $circle-small-size;
+    border-radius: 50%;
+    // z-index: 44;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+@keyframes minimize-text {
+  0% {
+    font-size: 150px;
+    opacity: 1;
+  }
+  25% {
+    font-size: 150px;
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  45% {
+    font-size: 160px;
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  80% {
+    // transform: translateY(0px);
+    // font-size: 160px;
+    // opacity: 0;
+  }
+  100% {
+    transform: translateY(-380px);
+    font-size: 50px;
+    // opacity: 0;
+  }
+}
+
+.roadmar_first_bubble {
+  position: absolute;
+  width: $circle-small-size;
+  height: $circle-small-size;
+  max-width: 100%;
+  z-index: 144;
+  background-color: #00FB1D;
+  border-radius: 50%;
+  opacity: 0;
+  // animation: animate-first-bubble 8s forwards;
+  animation: animSecondBubble 8s forwards;
+  animation-delay: 1.4s;
+}
+
+@keyframes animate-first-bubble {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+    width: $circle-small-size;
+    height: $circle-small-size;
+  }
+  15% {
+    opacity: 1;
+    width: $circle-size;
+    height: $circle-size;
+  }
+  90% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+    transform: translateX(0px);
+    width: $circle-size;
+    height: $circle-size;
+    background-color: #00FB1D;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-350px);
+    width: 200px;
+    height: 200px;
+    background-color: #CDF856;
+  }
+}
+
+.roadmar_second_bubble {
+  position: absolute;
+  width: $circle-small-size;
+  height: $circle-small-size;
+  max-width: 100%;
+  z-index: 144;
+  background-color: #00FB1D;
+  border-radius: 50%;
+  opacity: 0;
+  animation: animSecondBubble 8s forwards;
+  animation-delay: 8.5s;
+}
+
+.roadmar_third_bubble {
+  position: absolute;
+  width: $circle-small-size;
+  height: $circle-small-size;
+  max-width: 100%;
+  z-index: 144;
+  background-color: #00FB1D;
+  border-radius: 50%;
+  opacity: 0;
+  animation: animSecondBubble 8s forwards;
+  animation-delay: 15.5s;
+}
+
+.roadmar_fourth_bubble {
+  position: absolute;
+  width: $circle-small-size;
+  height: $circle-small-size;
+  max-width: 100%;
+  z-index: 144;
+  background-color: #00FB1D;
+  border-radius: 50%;
+  opacity: 0;
+  animation: animSecondBubble 8s forwards;
+  animation-delay: 22.5s;
+}
+.roadmar_fifth_bubble {
+  position: absolute;
+  width: $circle-small-size;
+  height: $circle-small-size;
+  max-width: 100%;
+  z-index: 144;
+  background-color: #00FB1D;
+  border-radius: 50%;
+  opacity: 0;
+  animation: animSecondBubble 8s forwards;
+  animation-delay: 29.5s;
+}
+
+@keyframes animSecondBubble {
+  0% {
+    opacity: 0;
+      display: none;
+  }
+  10% {
+    opacity: 1;
+    width: $circle-small-size;
+    height: $circle-small-size;
+  }
+  15% {
+    opacity: 1;
+    width: $circle-size;
+    height: $circle-size;
+  }
+  90% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+    transform: translateX(0px);
+   
+    width: $circle-size;
+    height: $circle-size;
+    background-color: #00FB1D;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-450px);
+    width: 200px;
+    height: 200px;
+    background-color: #CDF856;
+  }
+}
+
+.roadmar_test_bubble {
+  position: absolute;
+  width: $circle-size;
+  height: $circle-size;
+  border-radius: 50%;
+  max-width: 100%;
+  background-color: #00FB1D;
+}
+
+.roadmar_bubble_wrapper {
+  // border: 1px solid red;
+  height: 100%;
+  width: 100%;
+  padding: 3rem;
+}
+
+.roadmar_bubble1_num, 
+.roadmar_bubble2_num, 
+.roadmar_bubble3_num, 
+.roadmar_bubble4_num, 
+.roadmar_bubble5_num {
+  font-family: 'Montserrat';
+  font-weight: 900;
+  font-size: 90px;
+  // line-height: 110px;
+  padding: 0;
+  // line-height: 110px;
+  color: transparent;
+  -webkit-text-stroke: 3px;
+  -webkit-text-stroke-color: rgba(0, 0, 0, 0.54);
+  padding-left: 4rem;
+  padding-top: 2rem;
+  opacity: 0;
+}
+// .roadmar_bubble_num {
+//   font-family: 'Montserrat';
+//   font-weight: 900;
+//   font-size: 90px;
+//   line-height: 110px;
+//   padding: 0;
+//   line-height: 110px;
+//   color: transparent;
+//   -webkit-text-stroke: 3px;
+//   -webkit-text-stroke-color: rgba(0, 0, 0, 0.54);
+//   padding-left: 4rem;
+//   padding-top: 2rem;
+// }
+
+.roadmar_bubble1_title,
+.roadmar_bubble2_title,
+.roadmar_bubble3_title,
+.roadmar_bubble4_title,
+.roadmar_bubble5_title {
+  font-size: 80px;
+  font-weight: 900;
+  padding-left: 4rem;
+  opacity: 0;
+}
+
+.roadmar_bubble1_list,
+.roadmar_bubble2_list,
+.roadmar_bubble3_list,
+.roadmar_bubble4_list,
+.roadmar_bubble5_list {
+  padding-left: 4rem;
+  opacity: 0;
+  p {
+    font-size: 24px;
+    padding: 0;
+    margin: 0.5rem 0;
+    &:before {
+      content: " - ";
+    }
+  }
+}
+
+.roadmar_bubble1_list{
+  animation: bubbleListAnim 6.5s forwards;
+  animation-delay: 2.5s;
+}
+.roadmar_bubble2_list{
+  animation: bubbleListAnim 6.5s forwards;
+  animation-delay: 9.5s;
+}
+.roadmar_bubble3_list{
+  animation: bubbleListAnim 6.5s forwards;
+  animation-delay: 16.6s;
+}
+.roadmar_bubble4_list{
+  animation: bubbleListAnim 6.4s forwards;
+  animation-delay: 23.7s;
+}
+.roadmar_bubble5_list{
+  animation: bubbleListAnim 6.3s forwards;
+  animation-delay: 30.7s;
+}
+
+.roadmar_bubble1_num{
+  animation: bubbleNumAnim 6.5s forwards;
+  animation-delay: 2.5s;
+}
+.roadmar_bubble2_num{
+  animation: bubbleNumAnim 6.5s forwards;
+  animation-delay: 9.5s;
+}
+.roadmar_bubble3_num{
+  animation: bubbleNumAnim 6.5s forwards;
+  animation-delay: 16.6s;
+}
+.roadmar_bubble4_num{
+  animation: bubbleNumAnim 6.5s forwards;
+  animation-delay: 23.7s;
+}
+.roadmar_bubble5_num{
+  animation: bubbleNumAnim 6.3s forwards;
+  animation-delay: 30.7s;
+}
+
+.roadmar_bubble1_title{
+  animation: bubbleTitleAnim 6.5s forwards;
+  animation-delay: 2.5s;
+}
+.roadmar_bubble2_title{
+  animation: bubbleTitleAnim 6.5s forwards;
+  animation-delay: 9.5s;
+}
+.roadmar_bubble3_title{
+  animation: bubbleTitleAnim 6.5s forwards;
+  animation-delay: 16.6s;
+}
+.roadmar_bubble4_title{
+  animation: bubbleTitleAnim 6.5s forwards;
+  animation-delay: 23.7s;
+}
+.roadmar_bubble5_title{
+  animation: bubbleTitleAnim 6.3s forwards;
+  animation-delay: 30.7s;
+}
+
+@keyframes bubbleNumAnim {
+  0% {
+    font-size: 90px;
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  94% {
+    font-size: 90px;
+    padding-left: 4rem;
+    padding-top: 2rem;
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    font-size: 30px;
+    padding-left: 0;
+    padding-top: 0;
+  }
+}
+
+@keyframes bubbleTitleAnim {
+  0% {
+    font-size: 90px;
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  94% {
+    font-size: 90px;
+    padding-left: 4rem;
+    // padding-top: 2rem;
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    font-size: 30px;
+    padding-left: 0;
+    // padding-top: 0;
+  }
+}
+
+@keyframes bubbleListAnim {
+  0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.roadmap_replay_btn_wrapper {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 50;
+  
+  button {
+    opacity: 0;
+    padding: 24px 80px;
+    background: #E5FF42;
+    border-radius: 90px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    animation: displayReplay 2s forwards;
+    animation-delay: 38;
+  }
+  
+}
+
+@keyframes displayReplay {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

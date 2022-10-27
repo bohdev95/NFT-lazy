@@ -1,17 +1,13 @@
-import { useNavbar } from "@/hooks/useNavbar";
-import Image from "next/image";
+import Roadmap from "@/components/Roadmap/Roadmap";
+import FAQ from "@/components/FAQ/FAQ";
+import NFTIntroduction from "@/components/NFTIntroduction/NFTIntroduction";
 
 export default function Home() {
-  const { toggleNavbar } = useNavbar();
-  const onClickHandler = () => {
-    toggleNavbar();
-  };
   return (
     <>
-      <div className="canvas">
-        {/* <h1>Test</h1> */}
-        {/* <button onClick={onClickHandler}>CLICK ME!</button> */}
-      </div>
+      <NFTIntroduction />
+      <Roadmap />
+      <FAQ />
     </>
   );
 }

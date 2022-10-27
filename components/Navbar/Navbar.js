@@ -1,7 +1,12 @@
+import { useClickOutside } from "@/hooks/useClickOutside";
 import { useNavbar } from "@/hooks/useNavbar";
 import styles from "@/styles/navbar.module.scss";
+import { useRef } from "react";
+import LanguageButton from "../LanguageButton/LanguageButton";
 const Navbar = () => {
-  const { isHidden, toggleNavbar } = useNavbar();
+  const { isHidden, toggleNavbar, closeNavbar } = useNavbar();
+  let ref = useRef(null);
+  useClickOutside(ref, () => closeNavbar());
   return (
     <>
       <div
@@ -18,18 +23,19 @@ const Navbar = () => {
       >
         <img src="/Union.svg" alt="head" />
         <img src="/Union_nose.svg" alt="nose" className={styles.union_nose} />
-        <div className={styles.nav_bnts_container}>
-          <button onClick={toggleNavbar}>INTRO</button>
-          <button onClick={toggleNavbar}>NFT</button>
-          <button onClick={toggleNavbar}>APP</button>
-          <button onClick={toggleNavbar}>ROADMAP</button>
-          <button onClick={toggleNavbar}>PARTNERS</button>
-          <button onClick={toggleNavbar}>TEAM</button>
-          <button onClick={toggleNavbar}>FAQ</button>
+        <div className={styles.nav_bnts_container} ref={ref}>
+          <button>INTRO</button>
+          <button>NFT</button>
+          <button>APP</button>
+          <button>ROADMAP</button>
+          <button>PARTNERS</button>
+          <button>TEAM</button>
+          <button>FAQ</button>
         </div>
       </div>
 
       <div className={styles.nav_handler_container}>
+        <LanguageButton />
         <button onClick={toggleNavbar}>
           <span></span>
           <span></span>
