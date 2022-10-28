@@ -11,6 +11,121 @@ const Roadmap = () => {
   const [playAnimation, setPlayAnimation] = useState(false);
 
   const roadmapContainerRef = useRef(null);
+
+  function reset_animation() {
+    const el1 = document.getElementsByClassName(`${styles.roadmar_gradient}`);
+    const el2 = document.getElementsByClassName(`${styles.roadmar_title}`);
+    const el3 = document.getElementsByClassName(
+      `${styles.roadmar_first_bubble}`
+    );
+    const el4 = document.getElementsByClassName(
+      `${styles.roadmar_second_bubble}`
+    );
+    const el5 = document.getElementsByClassName(
+      `${styles.roadmar_third_bubble}`
+    );
+    const el6 = document.getElementsByClassName(
+      `${styles.roadmar_fourth_bubble}`
+    );
+    const el7 = document.getElementsByClassName(
+      `${styles.roadmar_fifth_bubble}`
+    );
+    const el8 = document.getElementsByClassName(
+      `${styles.roadmap_replay_btn_wrapper}`
+    );
+    const el9 = document.getElementsByClassName(`${styles.roadmar_gradient2}`);
+
+    const el10 = document.getElementsByClassName(
+      `${styles.roadmar_bubble1_num}`
+    );
+    const el11 = document.getElementsByClassName(
+      `${styles.roadmar_bubble1_title}`
+    );
+    const el12 = document.getElementsByClassName(
+      `${styles.roadmar_bubble1_list}`
+    );
+
+    const el13 = document.getElementsByClassName(
+      `${styles.roadmar_bubble2_num}`
+    );
+    const el14 = document.getElementsByClassName(
+      `${styles.roadmar_bubble2_title}`
+    );
+    const el15 = document.getElementsByClassName(
+      `${styles.roadmar_bubble2_list}`
+    );
+
+    const el16 = document.getElementsByClassName(
+      `${styles.roadmar_bubble3_num}`
+    );
+    const el17 = document.getElementsByClassName(
+      `${styles.roadmar_bubble3_title}`
+    );
+    const el18 = document.getElementsByClassName(
+      `${styles.roadmar_bubble3_list}`
+    );
+
+    const el19 = document.getElementsByClassName(
+      `${styles.roadmar_bubble4_num}`
+    );
+    const el20 = document.getElementsByClassName(
+      `${styles.roadmar_bubble4_title}`
+    );
+    const el21 = document.getElementsByClassName(
+      `${styles.roadmar_bubble4_list}`
+    );
+
+    const el22 = document.getElementsByClassName(
+      `${styles.roadmar_bubble5_num}`
+    );
+    const el23 = document.getElementsByClassName(
+      `${styles.roadmar_bubble5_title}`
+    );
+    const el24 = document.getElementsByClassName(
+      `${styles.roadmar_bubble5_list}`
+    );
+
+    // const el25 = document.getElementsByClassName(`${styles.roadmar_bubble1_num}`);
+    // const el26 = document.getElementsByClassName(`${styles.roadmar_bubble1_title}`);
+    // const el27 = document.getElementsByClassName(`${styles.roadmar_bubble1_list}`);
+
+    let arr = [
+      el1,
+      el2,
+      el3,
+      el4,
+      el5,
+      el6,
+      el7,
+      el8,
+      el9,
+      el10,
+      el11,
+      el12,
+      el13,
+      el14,
+      el15,
+      el16,
+      el17,
+      el18,
+      el19,
+      el20,
+      el21,
+      el22,
+      el23,
+      el24,
+      // el25,
+      // el26,
+      // el27,
+    ];
+    for (let i = 0; i < arr.length; i++) {
+      console.log(arr[i]);
+      arr[i][0].style.animation = "none";
+      arr[i][0].offsetHeight; /* trigger reflow */
+      arr[i][0].style.animation = null;
+    }
+  }
+
   return (
     <div className={styles.roadmar_container} ref={roadmapContainerRef}>
       <div className={styles.roadmar_gradient}></div>
@@ -108,7 +223,7 @@ const Roadmap = () => {
 
       {/* <button>REPLAY</button> */}
       <div className={styles.roadmap_replay_btn_wrapper}>
-        <button>Replay</button>
+        <button onClick={reset_animation}>Replay</button>
       </div>
       <div className={styles.roadmar_gradient2}></div>
     </div>

@@ -5,7 +5,7 @@ import NFTIntroduction from "@/components/NFTIntroduction/NFTIntroduction";
 export default function Home() {
   return (
     <>
-      <NFTIntroduction />
+      {/* <NFTIntroduction /> */}
       <Roadmap />
       <FAQ />
     </>

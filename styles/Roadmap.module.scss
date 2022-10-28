@@ -1,5 +1,6 @@
 $circle-size: 600px;
 $circle-small-size: 240px;
+$bubble_animation_duration: 16s;
 .roadmar_container {
   // position: relative;
   display: flex;
@@ -17,10 +18,12 @@ $circle-small-size: 240px;
     color: #fff;
     text-transform: uppercase;
     font-style: normal;
-    z-index: 31;
+    z-index: 150;
     opacity: 1;
-    animation: minimize-text 1s forwards;
-    animation-delay: 1s;
+    // animation: minimizeText 1s forwards 1s;
+    animation: minimizeText2 28s forwards 0.5s;
+    // animation: scaleText 1s forwards 37s;
+    // animation-delay: 1s;
   }
 }
 
@@ -36,13 +39,13 @@ $circle-small-size: 240px;
 
 .roadmar_gradient2 {
   position: absolute;
-  z-index: 30;
+  z-index: 145;
   height: 1px;
   width: 1px;
   opacity: 0;
   background: linear-gradient(0.16deg, #02FA23 0.18%, #43DFB2 42.7%, #9E73F9 64.55%);
   animation: minimize2 1s forwards;
-  animation-delay: 37s;
+  animation-delay: 27s;
 }
 
 @keyframes minimize {
@@ -86,7 +89,37 @@ $circle-small-size: 240px;
   }
 }
 
-@keyframes minimize-text {
+@keyframes minimizeText2 {
+  0% {
+    font-size: 150px;
+    opacity: 1;
+  }
+  1% {
+    font-size: 150px;
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  2% {
+    font-size: 160px;
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  3% {
+    transform: translateY(-380px);
+    font-size: 50px;
+  }
+  99% {
+    transform: translateY(-380px);
+    font-size: 50px;
+  }
+  100% {
+    transform: translateY(0);
+    font-size: 150px;
+    // opacity: 0;
+  }
+}
+
+@keyframes minimizeText {
   0% {
     font-size: 150px;
     opacity: 1;
@@ -123,8 +156,76 @@ $circle-small-size: 240px;
   border-radius: 50%;
   opacity: 0;
   // animation: animate-first-bubble 8s forwards;
-  animation: animSecondBubble 8s forwards;
-  animation-delay: 1.4s;
+  // animation: animSecondBubble 8s forwards 1.5s;
+  animation: animFirstBubble 16s forwards 1.5s;
+  // animation-delay: 1.4s;
+}
+
+@keyframes animFirstBubble {
+  0% {
+    opacity: 0;
+      display: none;
+  }
+  5% {
+    opacity: 1;
+    width: $circle-small-size;
+    height: $circle-small-size;
+  }
+  6% {
+    opacity: 1;
+    width: $circle-size;
+    height: $circle-size;
+  }
+  30% {
+    opacity: 1;
+    transform: translateX(0px);
+   
+    width: $circle-size;
+    height: $circle-size;
+    background-color: #00FB1D;
+  }
+  35% {
+    opacity: 1;
+    transform: translateX(-450px);
+    width: 200px;
+    height: 200px;
+    background-color: #CDF856;
+  }
+  40% {
+    opacity: 1;
+    transform: translateX(-450px);
+    width: 200px;
+    height: 200px;
+    background-color: #CDF856;
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(-450px);
+    width: 200px;
+    height: 200px;
+    background-color: #CDF856;
+  }
+  69% {
+    opacity: 1;
+    transform: translateX(-655px);
+    width: 200px;
+    height: 200px;
+    background-color: #CDF856;
+  }
+  98% {
+    opacity: 1;
+    background-color: #CDF856;;
+    opacity: 0.44;
+    transform: translateX(-650px);
+    width: 200px;
+    height: 200px;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-650px);
+    width: 200px;
+    height: 200px;
+  }
 }
 
 @keyframes animate-first-bubble {
@@ -169,8 +270,140 @@ $circle-small-size: 240px;
   background-color: #00FB1D;
   border-radius: 50%;
   opacity: 0;
-  animation: animSecondBubble 8s forwards;
-  animation-delay: 8.5s;
+  // animation: animSecondBubble 8s forwards;
+  animation: animSecondBubble 16s forwards 6.7s;
+  // animation-delay: 8.5s;
+}
+
+@keyframes animSecondBubble {
+  // 0% {
+  //   opacity: 0;
+  //     display: none;
+  // }
+  // 5% {
+  //   opacity: 1;
+  //   width: $circle-small-size;
+  //   height: $circle-small-size;
+  // }
+  // 6% {
+  //   opacity: 1;
+  //   width: $circle-size;
+  //   height: $circle-size;
+  // }
+  // 30% {
+  //   opacity: 1;
+  //   transform: translateX(0px);
+   
+  //   width: $circle-size;
+  //   height: $circle-size;
+  //   background-color: #00FB1D;
+  // }
+  // 35% {
+  //   opacity: 1;
+  //   transform: translateX(-450px);
+  //   width: 200px;
+  //   height: 200px;
+  //   background-color: #CDF856;
+  // }
+  // 65% {
+  //   opacity: 1;
+  //   transform: translateX(-450px);
+  //   width: 200px;
+  //   height: 200px;
+  //   background-color: #CDF856;
+  // }
+  // 89% {
+  //   opacity: 1;
+  //   transform: translateX(-450px);
+  //   width: 200px;
+  //   height: 200px;
+  //   background-color: #CDF856;
+  // }
+  // 90% {
+  //   opacity: 1;
+  //   transform: translateX(-650px);
+  //   width: 200px;
+  //   height: 200px;
+  //   background-color: #CDF856;
+  // }
+  // 98% {
+  //   opacity: 1;
+  //   background-color: #CDF856;;
+  //   opacity: 0.44;
+  //   transform: translateX(-650px);
+  //   width: 200px;
+  //   height: 200px;
+  // }
+  // 100% {
+  //   opacity: 0;
+  //   transform: translateX(-650px);
+  //   width: 200px;
+  //   height: 200px;
+  // }
+  0% {
+    opacity: 0;
+      display: none;
+  }
+  5% {
+    opacity: 1;
+    width: $circle-small-size;
+    height: $circle-small-size;
+  }
+  6% {
+    opacity: 1;
+    width: $circle-size;
+    height: $circle-size;
+  }
+  30% {
+    opacity: 1;
+    transform: translateX(0px);
+   
+    width: $circle-size;
+    height: $circle-size;
+    background-color: #00FB1D;
+  }
+  35% {
+    opacity: 1;
+    transform: translateX(-450px);
+    width: 200px;
+    height: 200px;
+    background-color: #CDF856;
+  }
+  40% {
+    opacity: 1;
+    transform: translateX(-450px);
+    width: 200px;
+    height: 200px;
+    background-color: #CDF856;
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(-450px);
+    width: 200px;
+    height: 200px;
+    background-color: #CDF856;
+  }
+  69% {
+    opacity: 1;
+    transform: translateX(-655px);
+    width: 200px;
+    height: 200px;
+    background-color: #CDF856;
+  }
+  98% {
+    opacity: 1;
+    background-color: #CDF856;;
+    opacity: 0.44;
+    transform: translateX(-650px);
+    width: 200px;
+    height: 200px;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-650px);
+    width: 200px;
+    height: 200px;
+  }
 }
 
 .roadmar_third_bubble {
@@ -182,8 +415,9 @@ $circle-small-size: 240px;
   background-color: #00FB1D;
   border-radius: 50%;
   opacity: 0;
-  animation: animSecondBubble 8s forwards;
-  animation-delay: 15.5s;
+  animation: animSecondBubble $bubble_animation_duration forwards 11.5s;
+  // animation: animThreeBubble $bubble_animation_duration forwards 15.5s;
+  // animation-delay: 15.5s;
 }
 
 .roadmar_fourth_bubble {
@@ -195,8 +429,10 @@ $circle-small-size: 240px;
   background-color: #00FB1D;
   border-radius: 50%;
   opacity: 0;
-  animation: animSecondBubble 8s forwards;
-  animation-delay: 22.5s;
+  animation: animSecondBubble $bubble_animation_duration forwards 16.5s;
+  // animation: animSecondBubble 8s forwards;
+  // animation: animThreeBubble $bubble_animation_duration forwards 22.5s;
+  // animation-delay: 22.5s;
 }
 .roadmar_fifth_bubble {
   position: absolute;
@@ -207,29 +443,63 @@ $circle-small-size: 240px;
   background-color: #00FB1D;
   border-radius: 50%;
   opacity: 0;
-  animation: animSecondBubble 8s forwards;
-  animation-delay: 29.5s;
+  animation: animSecondBubble $bubble_animation_duration forwards 21.5s;
+  // animation: animSecondBubble 8s forwards;
+  // animation: animThreeBubble $bubble_animation_duration forwards 29.5s;
+  // animation-delay: 29.5s;
 }
 
-@keyframes animSecondBubble {
+// @keyframes animSecondBubble {
+//   0% {
+//     opacity: 0;
+//       display: none;
+//   }
+//   10% {
+//     opacity: 1;
+//     width: $circle-small-size;
+//     height: $circle-small-size;
+//   }
+//   15% {
+//     opacity: 1;
+//     width: $circle-size;
+//     height: $circle-size;
+//   }
+//   90% {
+//     opacity: 1;
+//   }
+//   90% {
+//     opacity: 1;
+//     transform: translateX(0px);
+   
+//     width: $circle-size;
+//     height: $circle-size;
+//     background-color: #00FB1D;
+//   }
+//   100% {
+//     opacity: 1;
+//     transform: translateX(-450px);
+//     width: 200px;
+//     height: 200px;
+//     background-color: #CDF856;
+//   }
+// }
+
+@keyframes anim_Bubble {
   0% {
     opacity: 0;
       display: none;
   }
-  10% {
+  5% {
     opacity: 1;
     width: $circle-small-size;
     height: $circle-small-size;
   }
-  15% {
+  12% {
     opacity: 1;
     width: $circle-size;
     height: $circle-size;
   }
-  90% {
-    opacity: 1;
-  }
-  90% {
+  50% {
     opacity: 1;
     transform: translateX(0px);
    
@@ -237,12 +507,47 @@ $circle-small-size: 240px;
     height: $circle-size;
     background-color: #00FB1D;
   }
-  100% {
+  60% {
     opacity: 1;
     transform: translateX(-450px);
     width: 200px;
     height: 200px;
     background-color: #CDF856;
+  }
+  65% {
+    opacity: 1;
+    transform: translateX(-450px);
+    width: 200px;
+    height: 200px;
+    background-color: #CDF856;
+  }
+  89% {
+    opacity: 1;
+    transform: translateX(-450px);
+    width: 200px;
+    height: 200px;
+    background-color: #CDF856;
+  }
+  90% {
+    opacity: 1;
+    transform: translateX(-650px);
+    width: 200px;
+    height: 200px;
+    background-color: #CDF856;
+  }
+  98% {
+    opacity: 1;
+    background-color: #CDF856;;
+    opacity: 0.44;
+    transform: translateX(-650px);
+    width: 200px;
+    height: 200px;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-650px);
+    width: 200px;
+    height: 200px;
   }
 }
 
@@ -448,27 +753,29 @@ $circle-small-size: 240px;
   position: absolute;
   display: flex;
   justify-content: center;
+  transform: translateY(150px);;
   left: 0;
   right: 0;
   margin-left: auto;
   margin-right: auto;
-  z-index: 50;
-  
-  button {
-    opacity: 0;
+  z-index: 150;
+  opacity: 0;
+  animation: replayButton 2s forwards 27s;
+  & button {
+    // opacity: 0;
     padding: 24px 80px;
     background: #E5FF42;
     border-radius: 90px;
     font-size: 18px;
     border: none;
     cursor: pointer;
-    animation: displayReplay 2s forwards;
-    animation-delay: 38;
+    // animation: displayReplay 2s forwards;
+    // animation-delay: 38;
   }
   
 }
 
-@keyframes displayReplay {
+@keyframes replayButton {
   0% {
     opacity: 0;
   }
