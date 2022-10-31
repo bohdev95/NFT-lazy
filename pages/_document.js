@@ -4,10 +4,10 @@ export default function Document() {
   return (
     <Html>
       <Head>
-        {/* <head> */}
-        {/* uncoment this lates */}
-        {/* <link rel="stylesheet" href="/preload.css" /> */}
-        {/* </head> */}
+        <head>
+          {/* uncoment this lates */}
+          <link rel="stylesheet" href="/preload.css" />
+        </head>
         {/* <link
           href="https://fonts.googleapis.com/css2?family=Inter&display=optional"
           rel="stylesheet"
@@ -28,7 +28,7 @@ export default function Document() {
         ></link>
       </Head>
       <body>
-        {/* <div id="globalLoader">
+        <div id="globalLoader">
           <div className="loading_screen_content">
             <div className="loading_gradient"></div>
             <img src="/Logo_green.svg" alt="logo" />
@@ -36,13 +36,14 @@ export default function Document() {
               0%
             </div>
           </div>
-        </div> */}
+        </div>
         {/* <div id="overlay">
           <div id="progstat"></div>
           <div id="progress"></div>
         </div> */}
         {/* uncoment this later */}
         {/* <script src="/preloader.js"></script> */}
+        <script context="module" src="/testPreloader.js"></script>
         <Main />
         <NextScript />
       </body>

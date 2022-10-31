@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import styles from "@/styles/Roadmap.module.scss";
 
 import { gsap } from "gsap";
@@ -8,10 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 import { text } from "consts/text";
 
 const Roadmap = () => {
-  const [playAnimation, setPlayAnimation] = useState(false);
-
   const roadmapContainerRef = useRef(null);
-
   function reset_animation() {
     const el1 = document.getElementsByClassName(`${styles.roadmar_gradient}`);
     const el2 = document.getElementsByClassName(`${styles.roadmar_title}`);
@@ -84,11 +81,6 @@ const Roadmap = () => {
     const el24 = document.getElementsByClassName(
       `${styles.roadmar_bubble5_list}`
     );
-
-    // const el25 = document.getElementsByClassName(`${styles.roadmar_bubble1_num}`);
-    // const el26 = document.getElementsByClassName(`${styles.roadmar_bubble1_title}`);
-    // const el27 = document.getElementsByClassName(`${styles.roadmar_bubble1_list}`);
-
     let arr = [
       el1,
       el2,
@@ -114,14 +106,10 @@ const Roadmap = () => {
       el22,
       el23,
       el24,
-      // el25,
-      // el26,
-      // el27,
     ];
     for (let i = 0; i < arr.length; i++) {
-      console.log(arr[i]);
       arr[i][0].style.animation = "none";
-      arr[i][0].offsetHeight; /* trigger reflow */
+      arr[i][0].offsetHeight;
       arr[i][0].style.animation = null;
     }
   }
@@ -205,23 +193,6 @@ const Roadmap = () => {
           </div>
         </div>
       </div>
-      {/* <div className={styles.roadmar_test_bubble}>
-      <div className={styles.roadmar_bubble_wrapper}>
-          <div className={styles.roadmar_bubble_num}>
-            {text.en.roadmap.circles.one.num}
-          </div>
-          <div className={styles.roadmar_bubble_title}>
-            {text.en.roadmap.circles.one.title}
-          </div>
-          <div className={styles.roadmar_bubble_list}>
-            {text.en.roadmap.circles.one.list.map((item, _idx) => (
-              <p key={_idx}>{item}</p>
-            ))}
-          </div>
-        </div>
-      </div> */}
-
-      {/* <button>REPLAY</button> */}
       <div className={styles.roadmap_replay_btn_wrapper}>
         <button onClick={reset_animation}>Replay</button>
       </div>

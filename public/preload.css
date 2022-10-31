@@ -17,18 +17,7 @@ body {
   display: flex;
 }
 
-/* .loading_screen_wrapper {
-  width: 100vw;
-  height: 100vh;
-  background-color: #354153;
-  position: fixed;
-  z-index: 9999;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
  .loading_screen_content {
-  /* // border: 1px solid red; */
   position: relative;
   display: flex;
   justify-content: center;
@@ -37,16 +26,12 @@ body {
   height: 100%;
   width: 100%;
  }
-  /* // background: radial-gradient(circle, rgba(66,255,0,0.3) 0%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 100%);
-  // animation-name: blink; */
-  
   .loading_gradient {
     top: 0;
     bottom: 0;
     left: auto;
     right: auto;
     position: absolute;
-    /* // background: radial-gradient(circle, rgba(66,255,0,0.3) 0%, rgba(0,0,0,0) 32%, rgba(0,0,0,0) 100%); */
     background: radial-gradient(circle, rgba(66,255,0,0.22) 0%, rgba(30,115,0,0) 50%, rgba(255,255,255,0) 100%);
     animation-name: blink;
     animation-duration: 3s;
@@ -58,6 +43,7 @@ body {
   .loading_screen_content img {
     width: 100%;
     max-width: 295px;
+    min-height: 246.16px;
   }
   .percent {
     font-family: "Exo";
