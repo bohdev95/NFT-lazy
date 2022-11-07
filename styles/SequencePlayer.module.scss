@@ -1,0 +1,50 @@
+.SequencePlayer {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #000000;
+  position: fixed;
+}
+
+.underground {
+  width: 100%;
+  position: fixed;
+  bottom: calc(-100% - 5px);
+  img {
+    max-width: 100%;
+    width: 100%;
+    height: 100vh;
+  }
+}
+
+.lazyrIntroContainer {
+  position: fixed;
+  z-index: 390;
+  max-width: 400px;
+  width: 100%;
+  top: 50%;
+  right: 10%;
+  
+
+  .lazyrIntroText {
+    padding: 1rem;
+    max-width: 520px;
+    width: 100%;
+    position: relative;
+    h1 {
+      position: absolute;
+      color: #fff;
+      font-size: 40px;
+      white-space: nowrap;
+      @media screen and (max-width: 1440px){
+        font-size: 30px;
+      }
+      @media screen and (max-width: 768px){
+        font-size: 28px;
+      }
+      @media screen and (max-width: 480px){
+        font-size: 22px;
+      }
+    }
+  }
+}

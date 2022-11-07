@@ -1,0 +1,59 @@
+
+$phoneHeightLg: 718px;
+$phoneWidthLg: 405px;
+$bg: #354153;
+$imageWidth: calc(100% + 30px);
+.appContainer {
+  background: $bg;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .appWrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .infoWrapper {
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+}
+
+.phoneWrapper {
+  height: $phoneHeightLg;
+  width: $phoneWidthLg;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .phoneDisplay {
+    position: absolute;
+    height: calc($phoneHeightLg - 130px);
+    width: calc($phoneWidthLg - 130px);
+    border-radius: 30px;
+    background: $bg;
+    transform: translateY(-2px);
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    img {
+      width: $imageWidth;
+      transform: translateX(-15px);
+    }
+  }
+  .phone {
+    background-image: url('/apppreview/phone.png');
+    height: 100%;
+    width: 100%;
+    max-width: 405px;
+    max-height: 718px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto 100%;
+  } 
+
+  
+}

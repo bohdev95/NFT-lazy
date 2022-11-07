@@ -1,0 +1,166 @@
+html, body {
+	font-family: MTS Sans;
+	letter-spacing: 0.04em;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	/* background: url(../img/bg.jpg) #062B35 center center fixed; */
+	background-repeat: no-repeat;
+    background-size: cover;
+}
+.not {
+	width: 420px;
+	height: 340px;
+	margin-left: -210px;
+	margin-top: -170px;
+	position: absolute;
+	left: 50%;
+	top: 50vh;
+	z-index: 100500;
+}
+.not_container {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: 100500;
+	background: rgba(0,0,0,0.6);
+}
+canvas {
+	touch-action: none;
+}
+.loader2 {
+	position: fixed;
+	z-index: 100500;
+	color: #fff;
+	text-align: center;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	/*background-image: url("../img/ps_logo.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-color: #555;*/
+	background-color: rgba(0,0,0,1);
+}
+.progress {
+	position: absolute;
+	margin: 60px 0 0 -210px;
+	width: 426px;
+	top: 50%;
+	left: 50%;
+	color: #fff;
+	text-align: center;
+}
+.progressNumber {
+	position: relative;
+	margin-top: 10px;
+	color: #fff;
+	font-size: 12px;
+}
+.myProgress {
+	position: relative;
+	margin-top: 40px;
+	width: 100%;
+	height: 3px;
+	background-color: grey;
+}
+#myBar {
+	position: absolute;
+	width: 1%;
+	height: 100%;
+	background-color: green;
+}
+#myBar2 {
+	position: absolute;
+	width: 1%;
+	height: 100%;
+	background-color: green;
+}
+#label {
+	text-align: center;
+	line-height: 30px;
+	color: white;
+}
+.progressNumber {
+	position: relative;
+	margin-top: 10px;
+	color: #fff;
+	font-size: 12px;
+}
+.myProgress {
+	position: relative;
+	margin-top: 20px;
+	width: 100%;
+	height: 3px;
+	background-color: grey;
+}
+#myBar2 {
+	position: absolute;
+	width: 1%;
+	height: 100%;
+	background-color: green;
+}
+#label {
+	text-align: center;
+	line-height: 30px;
+	color: white;
+}
+#progress {
+	color: white;
+	position: relative;
+	top: 40%;
+	width: 100%;
+	font-size: 20px;
+	font-weight: lighter;
+	z-index: 100;
+	text-align: center;
+	display:none;
+}
+
+.shadow {
+	-moz-box-shadow: 0px 0px 5px #000;
+	-webkit-box-shadow: 0px 0px 5px #000;
+	box-shadow: 0px 0px 5px #000;
+}
+
+#progressbar {
+	text-align: center;
+	background: #888;
+	width: 250px;
+	height: 2px;
+	margin-top: 10px;
+}
+
+#bar {
+	background:#fff;
+	width:0px;
+	height:2px;
+	-webkit-transition: all .3s;
+	-moz-transition: all .3s;
+	-ms-transition: all .3s;
+	-o-transition: all .3s;
+	transition: all .3s;
+}
+.copyright {
+	font-size: 14px;
+    line-height: 20px;
+    color: #9198A0;
+    text-align: center;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+}
+@media (max-width: 1440px) {
+
+}
+@media (max-width: 1240px) {
+
+}
+@media (max-width: 920px) {
+
+}
+@media (max-width: 640px) {
+
+}
+

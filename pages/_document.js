@@ -1,12 +1,28 @@
 import { Html, Head, Main, NextScript } from "next/document";
-
+import $ from "jquery";
 export default function Document() {
   return (
     <Html>
       <Head>
         <head>
           {/* uncoment this lates */}
+          {/* connect webgl start */}
           <link rel="stylesheet" href="/preload.css" />
+          {/* <script
+            type="importmap"
+            dangerouslySetInnerHTML={{
+              __html: `
+              {
+				"imports": {
+					"three": "/cybercity/build/three.module.js",
+					"three/addons/": "./jsm/"
+				}
+			}
+                  `,
+            }}
+          ></script> */}
+
+          {/*  */}
         </head>
         {/* <link
           href="https://fonts.googleapis.com/css2?family=Inter&display=optional"
@@ -43,6 +59,7 @@ export default function Document() {
         </div> */}
         {/* uncoment this later */}
         {/* <script src="/preloader.js"></script> */}
+
         <script context="module" src="/testPreloader.js"></script>
         <Main />
         <NextScript />

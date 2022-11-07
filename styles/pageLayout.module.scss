@@ -1,13 +1,13 @@
 .page_layout {
   display: flex;
   flex-direction: column;
-  position: fixed;
+  // position: fixed;
   z-index: 9;
   background: #354153;
   height: 100vh;
-  max-height: 100vh;
-  width: 100vw;
-  overflow: scroll;
+  // max-height: 100vh;
+  // width: 100vw;
+  // overflow: scroll;
   .page_layout_logo {
     height: 20%;
   }

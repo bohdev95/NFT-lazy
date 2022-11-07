@@ -57,5 +57,19 @@ export const text = {
         },
       },
     },
+    app: {
+      heading: {
+        h1: "lazyr app",
+        h2: "how it works",
+      },
+      activity: {
+        title: "activity",
+        info: "User will be compensated through voluntary carbon reduction activities anytime, anywhere!",
+      },
+      rewards: {
+        title: "get more rewards!",
+        info: "Upgrade your LAZY REVENGERS and get more rewards!",
+      },
+    },
   },
 };

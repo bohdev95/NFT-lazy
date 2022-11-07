@@ -1,7 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import Navbar from "../components/Navbar/Navbar";
 import "@/styles/globals.scss";
 import PageLayout from "@/components/PageLayout/PageLayout";
+import SmoothScroll from "@/components/SmoothScroll/SmoothScroll";
+import Player from "@/components/Player/Player";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import Timeline from "@/components/Timeline/Timeline";
+gsap.registerPlugin(ScrollTrigger);
 
 function MyApp({ Component, pageProps }) {
   const [percents, setPercents] = useState(0);
@@ -11,14 +17,14 @@ function MyApp({ Component, pageProps }) {
       const loader = document.getElementById("globalLoader");
       // if (loader) loader.remove();
       if (loader) {
-        console.log("loader: true");
+        // console.log("loader: true");
         if (percents < 100) {
-          console.log("loading < 100");
+          // console.log("loading < 100");
           setTimeout(() => {
             setPercents((curr) => curr + 1);
             const p = document.getElementById("percentageCounter");
             p.innerHTML = percents + "%";
-          }, 10);
+          }, 1);
         } else {
           setIsLoading(false);
           loader.remove();
@@ -32,10 +38,15 @@ function MyApp({ Component, pageProps }) {
     <>
       {isLoading ? null : (
         <React.Fragment>
-          <PageLayout>
-            <Navbar />
+          {/* <PageLayout> */}
+
+          <Navbar />
+          <Player />
+          <Timeline />
+          <SmoothScroll>
             <Component {...pageProps} />
-          </PageLayout>
+          </SmoothScroll>
+          {/* </PageLayout> */}
         </React.Fragment>
       )}
     </>
