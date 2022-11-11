@@ -3,6 +3,7 @@ import styles from "@/styles/SequencePlayer.module.scss";
 import { useWindowSize } from "@/hooks/useWindowSize";
 import { gsap } from "gsap";
 import { CustomEase } from "gsap/dist/CustomEase";
+import Timeline from "../Timeline/Timeline";
 
 gsap.registerPlugin(CustomEase);
 
@@ -19,6 +20,8 @@ const Player = () => {
   const story3Ref = useRef(null);
   const story4Ref = useRef(null);
 
+  const timelineRef = useRef(null);
+
   const { width, height } = useWindowSize();
 
   const scrollProgress = () => {
@@ -27,7 +30,7 @@ const Player = () => {
       document.documentElement.scrollHeight -
       document.documentElement.clientHeight;
 
-    const scrollLen = Math.ceil((scrollpx / winHeightPx) * 1000);
+    const scrollLen = Math.ceil((scrollpx / winHeightPx) * 1850);
 
     setFrame(scrollLen);
   };
@@ -234,6 +237,7 @@ const Player = () => {
         markers: false,
         start: "top+=430%",
         end: "top+=610%",
+
         scrub: true,
       },
     });
@@ -262,10 +266,24 @@ const Player = () => {
 
       { opacity: 0, delay: 1 }
     );
+
+    const progressTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: sequenceWrapperRef.current,
+        markers: false,
+        start: "top+=610%",
+        end: "top+=615%",
+
+        scrub: true,
+      },
+    });
+    progressTl.fromTo(timelineRef.current, { opacity: 1 }, { opacity: 0 });
   }, []);
 
   return (
     <>
+      <Timeline progress={frame} reference={timelineRef} />
+
       <div className={styles.SequencePlayer} ref={sequenceWrapperRef}>
         <canvas ref={canvasRef}></canvas>
       </div>

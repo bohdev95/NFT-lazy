@@ -9,7 +9,7 @@ export default class SmoothScroll extends React.Component {
   ro = new ResizeObserver((elements) => {
     for (let elem of elements) {
       const crx = elem.contentRect;
-      console.log(crx);
+      // console.log(crx);
       this.setState({
         height: crx.height,
       });

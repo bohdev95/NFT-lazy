@@ -1,17 +1,18 @@
-import React, { useEffect, useLayoutEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar/Navbar";
 import "@/styles/globals.scss";
-import PageLayout from "@/components/PageLayout/PageLayout";
 import SmoothScroll from "@/components/SmoothScroll/SmoothScroll";
 import Player from "@/components/Player/Player";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Timeline from "@/components/Timeline/Timeline";
+import Footer from "@/components/Footer/Footer";
 gsap.registerPlugin(ScrollTrigger);
 
 function MyApp({ Component, pageProps }) {
   const [percents, setPercents] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
     if (typeof window !== "undefined") {
       const loader = document.getElementById("globalLoader");
@@ -38,15 +39,13 @@ function MyApp({ Component, pageProps }) {
     <>
       {isLoading ? null : (
         <React.Fragment>
-          {/* <PageLayout> */}
-
           <Navbar />
           <Player />
-          <Timeline />
+
           <SmoothScroll>
             <Component {...pageProps} />
           </SmoothScroll>
-          {/* </PageLayout> */}
+          <Footer />
         </React.Fragment>
       )}
     </>

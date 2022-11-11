@@ -1,6 +1,13 @@
 
 $phoneHeightLg: 718px;
 $phoneWidthLg: 405px;
+
+$phoneHeightMd: 618px;
+$phoneWidthMd: 305px;
+
+$phoneHeightSm: 418px;
+$phoneWidthSm: 205px;
+
 $bg: #354153;
 $imageWidth: calc(100% + 30px);
 .appContainer {
@@ -9,26 +16,211 @@ $imageWidth: calc(100% + 30px);
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 4rem;
+  overflow: hidden;
+  .gradient {
+    height: 1000px;
+    width: 1000px;
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.5;
+    background: radial-gradient(34.98% 34.98% at 50% 50%, #FFE57E 0%, rgba(6, 19, 45, 0) 100%);
+    left: 50%;
+    bottom: -120px;
+    transform: translateX(-50%);
+    @media screen and (max-width: 1440px) {
+      height: 800px!important;
+      width: 800px;
+
+      bottom: 10%;
+      
+    }
+    @media screen and (max-width: 1440px) {
+      height: 500px!important;
+      width: 500px;
+
+      bottom: 0%;
+      
+    }
+    @media screen and (max-width: 480px) {
+      height: 460px!important;
+      width: 460px;
+
+      bottom: 20%;
+      
+    }
+  }
   .appWrapper {
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
     .infoWrapper {
       display: flex;
       justify-content: space-around;
+      @media screen and (max-width: 768px) {
+        flex-direction: column;
+      }
+    }
+  }
+}
+.titleWrapper {
+  h1 {
+    color: #fff;
+    font-size: 150px;
+    font-weight: 900;
+    text-transform: uppercase;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+
+  }
+  h2 {
+    color: #fff;
+    font-size: 60px;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    text-align: center;
+    
+  }
+  @media screen and (max-width: 1600px) {
+    h1 {
+
+      font-size: 100px;
+    }
+    h2 {
+      font-size: 40px;
+    }
+  }
+  @media screen and (max-width: 1280px) {
+    h1 {
+
+      font-size: 60px;
+    }
+    h2 {
+      font-size: 30px;
     }
   }
 }
 
+.activityWrapper, .rewardsWrapper {
+  max-width: 500px;
+  h3, p {
+    color: #fff;
+  }
+  h3 {
+    font-size: 46px;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+    padding-top: 4rem;
+  }
+  p {
+    padding-top: 4rem;
+    font-size: 28px;
+  }
+  @media screen and (max-width: 1600px) {
+    max-width: 400px;
+    h3 {
+      font-size: 36px;
+    }
+    p {
+      font-size: 22px;
+    }
+  }
+  @media screen and (max-width: 1440px) {
+    
+    p {
+      padding-top: 2rem;
+    }
+  }
+  @media screen and (max-width: 1280px) {
+    max-width: 30%;
+    h3 {
+      font-size: 28px;
+    }
+    p {
+      font-size: 20px;
+      line-height: 30px;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    max-width: 50%;
+
+    h3 {
+      font-size: 28px;
+    }
+    p {
+      font-size: 18px;
+      line-height: 30px;
+      padding-top: 0rem;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    max-width: 70%;
+
+    h3 {
+      font-size: 28px;
+    }
+    p {
+      font-size: 18px;
+      line-height: 30px;
+      padding-top: 0rem;
+    }
+  }
+}
+.activityWrapper {
+  margin-left: 4rem;
+  @media screen and (max-width: 1600px) {
+    margin-left: 2rem;
+  }
+  @media screen and (max-width: 768px) {
+    flex: 1;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.rewardsWrapper {
+  margin-right: 4rem;
+  @media screen and (max-width: 1600px) {
+    margin-right:2rem;
+  }
+  @media screen and (max-width: 768px) {
+    flex: 2;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.carousel {
+  padding: 0 4rem;
+  @media screen and (max-width: 1440px) {
+    padding: 0 3rem;
+  }
+  @media screen and (max-width: 768px) {
+    padding: 0 1rem;
+  }
+}
 .phoneWrapper {
   height: $phoneHeightLg;
   width: $phoneWidthLg;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: auto;
+    margin-right: auto;
+  @media screen and (max-width: 1600px) {
+    height: $phoneHeightMd;
+    width: $phoneWidthMd;
+  }
+  @media screen and (max-width: 1440px) {
+    height: $phoneHeightSm;
+    width: $phoneWidthSm;
+  }
   .phoneDisplay {
+    z-index: 11;
     position: absolute;
     height: calc($phoneHeightLg - 130px);
     width: calc($phoneWidthLg - 130px);
@@ -39,13 +231,21 @@ $imageWidth: calc(100% + 30px);
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    img {
-      width: $imageWidth;
-      transform: translateX(-15px);
+    @media screen and (max-width: 1600px) {
+      height: calc($phoneHeightMd - 110px);
+      width: calc($phoneWidthMd - 68px);
+      transform: translateX(2px);
+    }
+    @media screen and (max-width: 1440px) {
+      height: calc($phoneHeightSm - 75px);
+      width: calc($phoneWidthSm - 48px);
+      border-radius: 20px;
+      
     }
   }
   .phone {
     background-image: url('/apppreview/phone.png');
+    z-index: 10;
     height: 100%;
     width: 100%;
     max-width: 405px;
@@ -54,6 +254,4 @@ $imageWidth: calc(100% + 30px);
     background-position: center;
     background-size: auto 100%;
   } 
-
-  
 }

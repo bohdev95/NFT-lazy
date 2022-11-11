@@ -5,6 +5,8 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 import { useEffect, useRef } from "react";
+import Timer from "../Timer/Timer";
+import { text } from "@/consts/text";
 
 const WelcomeBlock = () => {
   const sectionOneRef = useRef(null);
@@ -61,6 +63,7 @@ const WelcomeBlock = () => {
       <section>
         <div className={styles.sectionOne} ref={sectionOneRef}>
           <div className={styles.introWrapper} ref={introRef}>
+            <Timer />
             <div className={styles.logoWrapper}>
               <img src="/logo/green.svg" alt="logo" />
             </div>
@@ -68,13 +71,10 @@ const WelcomeBlock = () => {
               <div className={styles.introText}>
                 <div className={styles.textWrapper}>
                   <div className={styles.welcomeContainer} ref={welcomeRef}>
-                    <h1>WELCOME</h1>
+                    <h1>{text.en.welcome.title}</h1>
                     <span className={styles.textWriter} ref={writerRef}></span>
                   </div>
-                  <p ref={paragraphRef}>
-                    LAZYR (LAZY REVENGERS) is the world&apos;s first
-                    blockchain-based on Green To Earn project.
-                  </p>
+                  <p ref={paragraphRef}>{text.en.welcome.info}</p>
                 </div>
               </div>
               <div className={styles.lazyrWrapper}>
@@ -102,10 +102,9 @@ const WelcomeBlock = () => {
             </div>
           </div>
         </div>
-        <div className={styles.sectionThree}>
+        {/* <div className={styles.sectionThree}>
           <h1>NFT</h1>
-        </div>
-        <div className={styles.sectionTwo}></div>
+        </div> */}
       </section>
     </>
   );

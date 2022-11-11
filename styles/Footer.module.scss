@@ -1,0 +1,197 @@
+.container, .container_hidden {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  transition: all ease-in 0.3s;
+  width: 100%;
+
+  .headContainer {
+    img {
+      max-width: 1317px;
+    }
+    @media screen and (max-width: 1600px) {
+      img {
+        max-width: 1117px;
+      }
+    }
+    @media screen and (max-width: 1440px) {
+      img {
+        max-width: 917px;
+      }
+    }
+    @media screen and (max-width: 1280px) {
+      img {
+        max-width: 717px;
+      }
+    }
+    @media screen and (max-width: 768px) {
+      img {
+        max-width: 617px;
+      }
+    }
+    @media screen and (max-width: 480px) {
+      img {
+        max-width: 317px;
+      }
+    }
+    .links {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 600px;
+      height: 200px;
+      margin-top: 16rem;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: auto;
+
+      @media screen and (max-width: 1600px) {
+        margin-top: 12rem;
+      }
+      @media screen and (max-width: 1440px) {
+        margin-top: 10rem;
+      }
+      @media screen and (max-width: 1280px) {
+        margin-top: 8rem;
+      }
+      @media screen and (max-width: 768px) {
+        margin-top: 6rem;
+      }
+      @media screen and (max-width: 480px) {
+        width: 100%;
+        padding-top: 2rem;
+        background: linear-gradient(0.16deg, #02FA23 0.18%, #43DFB2 42.7%, #9E73F9 64.55%);
+        transform: translateY(130px);
+        height: 250px;
+      }
+
+      .languages {
+        display: flex;
+        justify-content: center;
+
+        button {
+          border: none;
+          background-color: transparent;
+          font-size: 22px;
+          font-weight: 600;
+          color: #000;
+          margin: 0 1rem;
+          cursor: pointer;
+          @media screen and (max-width: 1440px) {
+            font-size: 20px;
+            margin: 0 0.5rem;
+          }
+          @media screen and (max-width: 1280px) {
+            font-size: 18px;
+            margin: 0 0.25rem;
+          }
+        }
+      }
+
+      .icons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 1rem 0;
+
+        img {
+          width: 60px;
+          margin: 0 1rem;
+          cursor: pointer;
+          @media screen and (max-width: 1440px) {
+            width: 40px;
+            margin: 0 1rem;
+          }
+          @media screen and (max-width: 1280px) {
+            width: 35px;
+            margin: 0 0.75rem;
+          }
+          @media screen and (max-width: 480px) {
+            width: 45px;
+            margin: 1rem 0.75rem;
+          }
+        }
+      }
+      .policy {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        li {
+          list-style: none;
+          cursor: pointer;
+          margin: 0.5rem 0;
+          color: #fff;
+          font-size: 22px;
+          font-weight: 500;
+        }
+        @media screen and (max-width: 1440px) {
+          li {
+            margin: 0.25rem 0;
+            font-size: 20px;
+          }
+        }
+        @media screen and (max-width: 1280px) {
+          flex-direction: row;
+          li {
+            margin: 0.25rem 0.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.container {
+  z-index: 99999;
+  bottom: 0;
+  transform: translateY(220px);
+  @media screen and (max-width: 1440px) {
+    transform: translateY(170px);
+  }
+  @media screen and (max-width: 1280px) {
+    transform: translateY(120px);
+  }
+  @media screen and (max-width: 480px) {
+    transform: translateY(-180px);
+  }
+}
+
+.hidden {
+  bottom: 0;
+  transform: translateY(100%);
+}
+
+.hiddenButton {
+  position: fixed;
+  bottom: 125px;
+  right: 25px;
+  // background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 50px;
+}
+
+.fade {
+  min-height: 100vh;
+  width: 100%;
+  top: 0;
+  position: fixed;
+  background-color: rgba(0,0,0,0.6);
+  visibility: visible;
+  z-index: 9999;
+}
+
+.fade_invisible {
+  visibility: hidden;
+
+}
+
+.btnActive {
+  color: #61FF98!important;
+}

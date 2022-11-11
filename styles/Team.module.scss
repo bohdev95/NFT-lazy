@@ -1,0 +1,132 @@
+.container {
+  min-height: 100vh;
+  background: #354153;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+
+  .titleWrapper {
+    margin-top: auto;
+    h1 {
+      margin: 0;
+      padding: 0;
+      font-size: 90px;
+      font-weight: 900;
+      color: #fff;
+      text-transform: uppercase;
+      @media screen and (max-width: 480px) {
+        font-size: 60px;
+        margin-top: 4rem;
+      }
+    }
+  }
+  .cardsWrapper {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    margin: auto 0;
+    .cardsContainer1 {
+      display: flex;
+      animation: cardsMarquee 30s linear infinite;
+    }
+    .cardsContainer2 {
+      display: flex;
+      animation: cardsMarquee 30s linear infinite;
+    }
+
+    .card {
+      margin: 0 12px;
+      img {
+        border-radius: 20px;
+      }
+      .cardInfo {
+        display: flex;
+        flex-direction: column;
+        h3 {
+          margin: 6px 0;
+          padding: 0;
+          font-size: 24px;
+          font-weight: 500;
+          color: #fff;
+        }
+        .cardSocial {
+          display: flex;
+          .humanPost {
+            display: flex;
+            p {
+              background-color: #6C6781;
+              padding: 4px 12px;
+              margin: 0;
+              font-size: 14px;
+              font-weight: 500;
+            }
+          }
+          .humanSocials {
+            padding-left: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img {
+              height: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .hashtagsWrapper {
+    background-color: #ADFF00;
+    width: 100%;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 3rem;
+    
+    // margin-bottom: 4rem;
+    @media screen and (max-width: 768px) {
+      height: 36px;
+    }
+    p {
+      font-weight: 500;
+      font-size: 24px;
+      margin: 0;
+      padding: 0;
+      margin: 0 5px;
+      @media screen and (max-width: 768px) {
+        font-size: 20px;
+      }
+    }
+    .hashtagsP1, .hashtagsP2  {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .hashtagsP1 {
+      animation: marquee 20s linear infinite;
+    }
+    .hashtagsP2 {
+        animation: marquee 20s linear infinite;
+      
+    }
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate(-100%, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes cardsMarquee {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-100%, 0);
+  }
+}

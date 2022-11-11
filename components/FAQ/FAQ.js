@@ -1,3 +1,4 @@
+import { text } from "@/consts/text";
 import styles from "@/styles/FAQ.module.scss";
 import { useState } from "react";
 
@@ -20,7 +21,7 @@ const FAQ = () => {
   return (
     <div className={`full dfc aic jcc ${styles.faq_container}`}>
       <div className={styles.faq_top}>
-        <h1 className={styles.decorative}>FAQ</h1>
+        <h1 className={styles.decorative}>{text.en.faq.title}</h1>
       </div>
       <div className={styles.faq_bot}>
         <div className={styles.questions_container}>
