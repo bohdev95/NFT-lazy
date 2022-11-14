@@ -4,4 +4,32 @@
   align-items: center;
   min-height: 100vh;
   background-color: rgb(0, 0, 0);
+  position:relative;
+}
+.not {
+  width: 420px;
+  height: 340px;
+  position: absolute;
+  left: 50%;
+  z-index: 100500;
+}
+.not_container {
+  position: absolute;
+  z-index: 100500;
+  background: rgba(0,0,0,0.6);
+}
+.forward_camera{
+  position: relative;
+  z-index: 2500;
+
+}
+.backward_camera{
+  position: relative;
+  z-index: 2500;
+
+}
+.mouse_event{
+  position:absolute;
+  z-index: 2500;
+  bottom: 50px;
 }
