@@ -353,7 +353,7 @@ const NFTIntroduction = () => {
           $('.not_container').fadeOut(300);
         });
 
-
+        let setint  = '';
         $(document).ready(function(){
           // $("canvas").bind('mousewheel', function(e){
           //   if(e.originalEvent.wheelDelta /120 > 0) {
@@ -367,20 +367,32 @@ const NFTIntroduction = () => {
           //     }
           //   }
           // });
-          $("#forward_camera").bind('mousedown', function(e){
-           
-                camera.position.z -= 0.1;
-           
+          $('#forward_camera').on('mousedown',function (e) {
+             clearInterval(setint);
+             setint = setInterval(function () {
+                if (camera.position.z > -4.4){
+                  camera.position.z -= 0.1;
+                }
+             },50);
           });
-          $("#backward_camera").bind('mousedown', function(e){
-                camera.position.z += 0.1;
-           
+          $('#forward_camera').on("mouseleave mouseup", function () {
+             clearInterval(setint);
           });
 
+          $('#backward_camera').on('mousedown',function (e) {
+             clearInterval(setint);
+             setint = setInterval(function () {
+                if (camera.position.z < 2.4){
+                  camera.position.z += 0.1;
+                }
+             },50);
+          });
+          $('#backward_camera').on("mouseleave mouseup", function () {
+             clearInterval(setint);
+          });
         });
 
-
-
+        
         const renderScene = new RenderPass( scene, camera );
 
         const bloomPass = new UnrealBloomPass( new THREE.Vector2( window.innerWidth, window.innerHeight ), 1.5, 0.4, 0.85 );
